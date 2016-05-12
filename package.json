@@ -1,9 +1,16 @@
 {
   "name": "fuzzy-definitions",
   "displayName": "Fuzzy Definitions",
-  "description": "Fuzzy Go to Definition for JavaScript",
+  "description": "Fuzzy 'Go to Definition' for JavaScript",
   "version": "0.0.1",
   "publisher": "jrieken",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jrieken/fuzzy-definitions"
+  },
+  "bugs": {
+    "url": "https://github.com/jrieken/fuzzy-definitions/issues"
+  },
   "keywords": [
     "javascript"
   ],
