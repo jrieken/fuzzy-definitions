@@ -87,7 +87,7 @@ function nakDefinitionSearch(document: vscode.TextDocument, pos: vscode.Position
                 } else if (lastMatch = /^(\d+);\d+ (\d+)/.exec(line)) {
                     let line = parseInt(lastMatch[1]) - 1;
                     let end = parseInt(lastMatch[2]);
-                    range = new vscode.Range(line, end - word.length, line, end);
+                    range = new vscode.Range(line, end - word.length + 1, line, end);
 
                     if (lastUri.toString() !== document.uri.toString() || !range.contains(pos)) {
                         result.push(new vscode.Location(lastUri, range));
