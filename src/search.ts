@@ -71,7 +71,7 @@ function nakDefinitionSearch(document: vscode.TextDocument, pos: vscode.Position
         let word = document.getText(range);
         let pattern = `(let|const|var|function|class)\\s+${word}|${word}\\s*:`
 
-        const nak = exec(`'${node}' ${module} --ackmate -G '*${extname(document.fileName)}' '${pattern}' ${vscode.workspace.rootPath}`, (err, stdout, stderr) => {
+        const nak = exec(`'${node}' ${module} --ackmate -G '*${extname(document.fileName)}' -d '*node_modules*' '${pattern}' ${vscode.workspace.rootPath}`, (err, stdout, stderr) => {
             if (err || stderr) {
                 return reject(err || stderr);
             }
