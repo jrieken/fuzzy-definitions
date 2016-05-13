@@ -17,3 +17,9 @@ and fuzzy definitions can be invoked straight via `F1 > Go to Fuzzy Definitions`
 ### 0.0.1
 
 * proof of concept
+
+### 0.0.2
+
+* use the same nodejs version VS Code uses
+* kill fulltext search after 2 seconds
+* don't attempt to search `node_modules` folder
