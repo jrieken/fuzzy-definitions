@@ -62,12 +62,16 @@ function delegatingDefinitionSearch(document: vscode.TextDocument, pos: vscode.P
 }
 
 function nakDefinitionSearch(document: vscode.TextDocument, pos: vscode.Position, token: vscode.CancellationToken): PromiseLike<vscode.Location[]> {
-    let range = document.getWordRangeAtPosition(pos);
-    let word = document.getText(range);
-    let pattern = `(let|const|var|function|class)\\s+${word}|${word}\\s*:`
 
     return new Promise<vscode.Location[]>((resolve, reject) => {
-        const nak = exec(`node ${join(require.resolve('nak'), '../../bin/nak')} --ackmate -G '*${extname(document.fileName)}' '${pattern}' ${vscode.workspace.rootPath}`, (err, stdout, stderr) => {
+
+        let node = process.argv[0];
+        let module = join(require.resolve('nak'), '../../bin/nak');
+        let range = document.getWordRangeAtPosition(pos);
+        let word = document.getText(range);
+        let pattern = `(let|const|var|function|class)\\s+${word}|${word}\\s*:`
+
+        const nak = exec(`'${node}' ${module} --ackmate -G '*${extname(document.fileName)}' '${pattern}' ${vscode.workspace.rootPath}`, (err, stdout, stderr) => {
             if (err || stderr) {
                 return reject(err || stderr);
             }
