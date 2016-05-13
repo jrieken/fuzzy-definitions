@@ -98,6 +98,12 @@ function nakDefinitionSearch(document: vscode.TextDocument, pos: vscode.Position
             resolve(result);
         });
 
+        // wait no longer then 2sec for nak
+        setTimeout(() => {
+            resolve([]);
+            nak.kill();
+        }, 2000);
+
         token.onCancellationRequested(() => nak.kill());
     });
 }
