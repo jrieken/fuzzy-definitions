@@ -14,12 +14,18 @@ and fuzzy definitions can be invoked straight via `F1 > Go to Fuzzy Definitions`
 
 # Release Notes
 
-### 0.0.1
+### 0.0.3
 
-* proof of concept
+* back to global nodejs
+* encode arguments such that it works on windows
 
 ### 0.0.2
 
 * use the same nodejs version VS Code uses
 * kill fulltext search after 2 seconds
 * don't attempt to search `node_modules` folder
+
+
+### 0.0.1
+
+* proof of concept

@@ -3,7 +3,7 @@
   "displayName": "Fuzzy Definitions",
   "description": "Fuzzy 'Go to Definition' for JavaScript",
   "license": "MIT",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "jrieken",
   "repository": {
     "type": "git",
