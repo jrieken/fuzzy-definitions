@@ -65,13 +65,13 @@ function nakDefinitionSearch(document: vscode.TextDocument, pos: vscode.Position
 
     return new Promise<vscode.Location[]>((resolve, reject) => {
 
-        let node = process.argv[0];
+        // let node = process.argv[0];
         let module = join(require.resolve('nak'), '../../bin/nak');
         let range = document.getWordRangeAtPosition(pos);
         let word = document.getText(range);
         let pattern = `(let|const|var|function|class)\\s+${word}|${word}\\s*:`
-
-        const nak = exec(`'${node}' ${module} --ackmate -G '*${extname(document.fileName)}' -d '*node_modules*' '${pattern}' ${vscode.workspace.rootPath}`, (err, stdout, stderr) => {
+        let cmd = `node ${module} --ackmate -G "*${extname(document.fileName)}" -d "*node_modules*" "${pattern}" ${vscode.workspace.rootPath}`;
+        const nak = exec(cmd, (err, stdout, stderr) => {
             if (err || stderr) {
                 return reject(err || stderr);
             }
