@@ -1,9 +1,9 @@
 {
   "name": "fuzzy-definitions",
   "displayName": "Fuzzy Definitions",
-  "description": "Fuzzy 'Go to Definition' for JavaScript",
+  "description": "Fuzzy 'Go to Definition' for JavaScript and TypeScript",
   "license": "MIT",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "publisher": "jrieken",
   "repository": {
     "type": "git",
